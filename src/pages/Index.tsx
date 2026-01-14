@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,8 +33,17 @@ const Index = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+      setMobileMenuOpen(false);
     }
   };
+
+  const menuItems = [
+    { id: 'home', label: 'Главная' },
+    { id: 'about', label: 'О центре' },
+    { id: 'technologies', label: 'Технологии' },
+    { id: 'partners', label: 'Партнеры' },
+    { id: 'contacts', label: 'Контакты' }
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -46,24 +57,47 @@ const Index = () => {
                 <p className="text-xs text-muted-foreground">Технологии исследования Мирового океана</p>
               </div>
             </div>
-            <div className="hidden md:flex items-center space-x-8">
-              {[
-                { id: 'home', label: 'Главная' },
-                { id: 'about', label: 'О центре' },
-                { id: 'technologies', label: 'Технологии' },
-                { id: 'partners', label: 'Партнеры' },
-                { id: 'contacts', label: 'Контакты' }
-              ].map(({ id, label }) => (
-                <button
-                  key={id}
-                  onClick={() => scrollToSection(id)}
-                  className={`text-sm font-medium transition-colors ${
-                    activeSection === id ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
-                  }`}
-                >
-                  {label}
-                </button>
-              ))}
+            <div className="flex items-center space-x-4">
+              <div className="hidden md:flex items-center space-x-8">
+                {menuItems.map(({ id, label }) => (
+                  <button
+                    key={id}
+                    onClick={() => scrollToSection(id)}
+                    className={`text-sm font-medium transition-colors ${
+                      activeSection === id ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+                    }`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+              
+              <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon" className="md:hidden">
+                    <Icon name="Menu" size={24} />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                  <div className="flex flex-col space-y-6 mt-8">
+                    <div className="flex items-center space-x-3 pb-6 border-b border-border">
+                      <Icon name="Waves" className="text-primary" size={28} />
+                      <span className="font-bold">ТОИ ДВО РАН</span>
+                    </div>
+                    {menuItems.map(({ id, label }) => (
+                      <button
+                        key={id}
+                        onClick={() => scrollToSection(id)}
+                        className={`text-left text-lg font-medium transition-colors py-2 ${
+                          activeSection === id ? 'text-primary' : 'text-foreground hover:text-primary'
+                        }`}
+                      >
+                        {label}
+                      </button>
+                    ))}
+                  </div>
+                </SheetContent>
+              </Sheet>
             </div>
           </div>
         </nav>
