@@ -151,7 +151,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">О центре</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Тихоокеанский океанологический институт им. В.И. Иличева ДВО РАН
+              Тихоокеанский океанологический институт им. В.И. Ильичёва ДВО РАН
             </p>
           </div>
 
