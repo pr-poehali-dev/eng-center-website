@@ -51,7 +51,11 @@ const Index = () => {
         <nav className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <Icon name="Waves" className="text-primary" size={32} />
+              <img 
+                src="https://cdn.poehali.dev/files/лого_окон вар.png" 
+                alt="Логотип ТОИ ДВО РАН" 
+                className="h-12 w-12 object-contain"
+              />
               <div>
                 <h1 className="text-lg font-bold text-foreground">Инжиниринговый центр ТОИ ДВО РАН</h1>
                 <p className="text-xs text-muted-foreground">Технологии исследования Мирового океана</p>
@@ -81,7 +85,11 @@ const Index = () => {
                 <SheetContent side="right" className="w-[300px] sm:w-[400px]">
                   <div className="flex flex-col space-y-6 mt-8">
                     <div className="flex items-center space-x-3 pb-6 border-b border-border">
-                      <Icon name="Waves" className="text-primary" size={28} />
+                      <img 
+                        src="https://cdn.poehali.dev/files/лого_окон вар.png" 
+                        alt="Логотип ТОИ ДВО РАН" 
+                        className="h-10 w-10 object-contain"
+                      />
                       <span className="font-bold">ТОИ ДВО РАН</span>
                     </div>
                     {menuItems.map(({ id, label }) => (
@@ -372,7 +380,11 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <Icon name="Waves" className="text-primary" size={28} />
+                <img 
+                  src="https://cdn.poehali.dev/files/лого_окон вар.png" 
+                  alt="Логотип ТОИ ДВО РАН" 
+                  className="h-10 w-10 object-contain"
+                />
                 <span className="font-bold text-lg">ТОИ ДВО РАН</span>
               </div>
               <p className="text-sm text-secondary-foreground/70">
