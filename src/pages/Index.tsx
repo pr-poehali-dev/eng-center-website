@@ -113,6 +113,12 @@ const Index = () => {
 
       <section id="home" className="pt-32 pb-20 px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-transparent" />
+        <div className="absolute top-20 right-10 animate-float opacity-20">
+          <Icon name="Waves" size={120} className="text-primary" />
+        </div>
+        <div className="absolute bottom-10 left-10 animate-pulse-slow opacity-10">
+          <Icon name="Ship" size={100} className="text-accent" />
+        </div>
         <div className="container mx-auto relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-fade-in">
@@ -173,9 +179,9 @@ const Index = () => {
                 description: 'Владивосток, Приморский край. Стратегическое расположение для исследований Тихого океана и Японского моря'
               }
             ].map((item, index) => (
-              <Card key={index} className="p-8 hover:shadow-lg transition-shadow border-border/50">
-                <div className="bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                  <Icon name={item.icon} className="text-primary" size={32} />
+              <Card key={index} className="p-8 hover:shadow-lg transition-all hover:-translate-y-2 border-border/50 group">
+                <div className="bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                  <Icon name={item.icon} className="text-primary group-hover:scale-110 transition-transform" size={32} />
                 </div>
                 <h3 className="text-xl font-bold mb-3">{item.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{item.description}</p>
@@ -243,12 +249,13 @@ const Index = () => {
                 description: 'Образовательные программы для специалистов морской отрасли'
               }
             ].map((item, index) => (
-              <Card key={index} className="p-6 hover:shadow-xl transition-all hover:-translate-y-1 border-border/50">
-                <div className="bg-accent/10 w-14 h-14 rounded-xl flex items-center justify-center mb-4">
-                  <Icon name={item.icon} className="text-accent" size={28} />
+              <Card key={index} className="p-6 hover:shadow-xl transition-all hover:-translate-y-2 border-border/50 group relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-full -translate-y-12 translate-x-12 group-hover:scale-150 transition-transform duration-500" />
+                <div className="bg-accent/10 w-14 h-14 rounded-xl flex items-center justify-center mb-4 relative z-10 group-hover:bg-accent/20 transition-colors">
+                  <Icon name={item.icon} className="text-accent group-hover:scale-110 transition-transform" size={28} />
                 </div>
-                <h3 className="text-lg font-bold mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
+                <h3 className="text-lg font-bold mb-2 relative z-10">{item.title}</h3>
+                <p className="text-sm text-muted-foreground relative z-10">{item.description}</p>
               </Card>
             ))}
           </div>
