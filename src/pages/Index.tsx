@@ -277,14 +277,6 @@ const Index = () => {
                     и экологические исследования на акваториях. Сотрудничает с РАН, Газпром, Роснефтегаз, 
                     Росатом и международными научными центрами.
                   </p>
-                  <div className="bg-accent/5 rounded-xl p-4 border border-accent/20">
-                    <div className="flex items-center space-x-2 mb-2">
-                      <Icon name="TrendingUp" className="text-accent" size={20} />
-                      <span className="font-semibold text-accent">Вклад партнёра</span>
-                    </div>
-                    <p className="text-2xl font-bold">257 млн ₽</p>
-                    <p className="text-sm text-muted-foreground">Софинансирование на 2025-2028 гг.</p>
-                  </div>
                 </div>
               </div>
             </Card>
