@@ -135,6 +135,14 @@
     animation: glow 3s ease-in-out infinite;
   }
 
+  .animate-wave-subtle {
+    animation: wave-subtle 10s ease-in-out infinite;
+  }
+
+  .animate-pulse-subtle {
+    animation: pulse-subtle 5s ease-in-out infinite;
+  }
+
   @keyframes fade-in {
     from {
       opacity: 0;
@@ -213,6 +221,34 @@
     50% {
       opacity: 0.7;
       filter: blur(80px);
+    }
+  }
+
+  @keyframes wave-subtle {
+    0%,
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+    25% {
+      transform: translateX(20px) translateY(-10px);
+    }
+    50% {
+      transform: translateX(0) translateY(-20px);
+    }
+    75% {
+      transform: translateX(-20px) translateY(-10px);
+    }
+  }
+
+  @keyframes pulse-subtle {
+    0%,
+    100% {
+      opacity: 0.05;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.15;
+      transform: scale(1.05);
     }
   }
 }
