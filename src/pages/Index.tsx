@@ -149,12 +149,12 @@ const Index = () => {
                 </Button>
               </div>
             </div>
-            <div className="relative animate-slide-up">
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-3xl blur-3xl" />
+            <div className="relative animate-slide-up group">
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-3xl blur-3xl animate-pulse-slow" />
               <img
                 src="https://cdn.poehali.dev/projects/94320806-1e13-4e47-94f7-c1556114391c/files/ae5e39b6-7a9c-4927-a60d-6de45baad7f7.jpg"
                 alt="Океанологические исследования"
-                className="relative rounded-3xl shadow-2xl w-full h-auto"
+                className="relative rounded-3xl shadow-2xl w-full h-auto transition-transform duration-700 group-hover:scale-105 animate-float"
               />
             </div>
           </div>
