@@ -113,12 +113,9 @@ const Index = () => {
 
       <section id="home" className="pt-32 pb-20 px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-transparent" />
-        <div className="absolute top-20 right-10 animate-float opacity-20">
-          <Icon name="Waves" size={120} className="text-primary" />
-        </div>
-        <div className="absolute bottom-10 left-10 animate-pulse-slow opacity-10">
-          <Icon name="Ship" size={100} className="text-accent" />
-        </div>
+        <div className="absolute top-10 right-20 w-96 h-96 bg-primary/20 rounded-full animate-spotlight" />
+        <div className="absolute bottom-20 left-10 w-80 h-80 bg-accent/20 rounded-full animate-glow" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-primary/10 to-accent/10 rounded-full blur-3xl animate-pulse-slow" />
         <div className="container mx-auto relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-fade-in">
