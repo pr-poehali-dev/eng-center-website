@@ -112,22 +112,32 @@ const Index = () => {
       </header>
 
       <section id="home" className="pt-32 pb-20 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-transparent animate-pulse-subtle" />
-        <div className="absolute inset-0 opacity-30">
-          <svg className="w-full h-full" viewBox="0 0 1200 600" preserveAspectRatio="none">
-            <path d="M0,300 Q300,250 600,300 T1200,300 L1200,600 L0,600 Z" fill="url(#wave-gradient)" className="animate-wave-subtle" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-accent/5 to-primary/10 animate-pulse-subtle" />
+        
+        <div className="absolute inset-0 opacity-20">
+          <svg className="w-full h-full absolute bottom-0" viewBox="0 24 150 28" preserveAspectRatio="none" style={{ height: '100%' }}>
             <defs>
-              <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" style={{ stopColor: 'hsl(var(--primary))', stopOpacity: 0.1 }} />
-                <stop offset="50%" style={{ stopColor: 'hsl(var(--accent))', stopOpacity: 0.15 }} />
-                <stop offset="100%" style={{ stopColor: 'hsl(var(--primary))', stopOpacity: 0.1 }} />
+              <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+              <linearGradient id="wave-gradient-1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style={{ stopColor: 'hsl(var(--primary))', stopOpacity: 0.2 }} />
+                <stop offset="100%" style={{ stopColor: 'hsl(var(--accent))', stopOpacity: 0.3 }} />
+              </linearGradient>
+              <linearGradient id="wave-gradient-2" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style={{ stopColor: 'hsl(var(--accent))', stopOpacity: 0.15 }} />
+                <stop offset="100%" style={{ stopColor: 'hsl(var(--primary))', stopOpacity: 0.25 }} />
               </linearGradient>
             </defs>
+            <g className="animate-ocean-wave">
+              <use xlinkHref="#gentle-wave" x="48" y="0" fill="url(#wave-gradient-1)" />
+            </g>
+            <g className="animate-ocean-wave-2">
+              <use xlinkHref="#gentle-wave" x="48" y="3" fill="url(#wave-gradient-2)" />
+            </g>
           </svg>
         </div>
+        
         <div className="absolute top-10 right-20 w-96 h-96 bg-primary/20 rounded-full animate-spotlight" />
         <div className="absolute bottom-20 left-10 w-80 h-80 bg-accent/20 rounded-full animate-glow" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-primary/10 to-accent/10 rounded-full blur-3xl animate-pulse-slow" />
         <div className="container mx-auto relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-fade-in">
@@ -140,11 +150,20 @@ const Index = () => {
                 и устойчивого управления прибрежными территориями
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" onClick={() => scrollToSection('about')} className="group">
+                <Button 
+                  size="lg" 
+                  onClick={() => scrollToSection('about')} 
+                  className="group relative overflow-hidden hover:shadow-xl hover:shadow-primary/20 transition-all"
+                >
                   Узнать больше
                   <Icon name="ArrowRight" className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
                 </Button>
-                <Button size="lg" variant="outline" onClick={() => scrollToSection('contacts')}>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  onClick={() => scrollToSection('contacts')}
+                  className="hover:shadow-lg hover:shadow-accent/10 transition-all"
+                >
                   Связаться с нами
                 </Button>
               </div>
